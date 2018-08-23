@@ -4,6 +4,7 @@
 项目实现Fragment栈管理，实现Fragment页面跳转管理，添加新页面，回退上一个页面（回退上N个页面），回到首页面。页面跳转也支持添加动画。
 
 ## 实现方式
+详情参考demo示例。
 ### 1. `Activity`继承`BaseActivity`类
 
 ```java
