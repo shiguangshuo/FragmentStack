@@ -21,7 +21,7 @@ public class MainActivity extends BaseActivity {
 
         mTvTitle = findViewById(R.id.tv_title);
 
-        addFragmentToStackWithoutAnimation(TestFragment.newInstance(null));
+        addFragmentToStackWithoutAnimation(TestFragment.newInstance(null), true);
     }
 
     public void setTitle(CharSequence title) {

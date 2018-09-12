@@ -38,7 +38,7 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
      */
     public void setContainerId(int containerId) {
         if(0 == containerId) {
-            throw new IllegalArgumentException("Container id must be valid");
+            throw new IllegalArgumentException("Container id is invalid");
         }
         mContainerId = containerId;
     }
@@ -57,27 +57,31 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
     /**
      * 入栈(系统默认动画)
      * @param fragment 入栈的Fragment
+     * @param addToBackStack 是否加入到回退栈中
      */
-    public void addFragmentToStack(Fragment fragment) {
+    public void addFragmentToStack(Fragment fragment, boolean addToBackStack) {
         // Add the fragment to the activity, pushing this transaction
         // on to the back stack.
         FragmentTransaction ft = mFragmentManager.beginTransaction();
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         final String tag = fragment.getClass().getName() + "@" + fragment.hashCode();
         ft.replace(mContainerId, fragment, tag);
-        ft.addToBackStack(tag); // 将name设置成和tag一样，那样就可以在BackStack中通过entryName（tag）来找到Fragment
+        if(addToBackStack) {
+            ft.addToBackStack(tag); // 将name设置成和tag一样，那样就可以在BackStack中通过entryName（tag）来找到Fragment
+        }
         ft.commit();
     }
 
     /**
      * 带自定义动画的入栈
      * @param fragment Fragment对象
+     * @param addToBackStack 是否加入到回退栈中
      * @param enter 新的Fragment出现动画
      * @param exit 旧的Fragment消失动画
      * @param popEnter 新的Fragment消失动画
      * @param popExit 旧的Fragment出现动画
      */
-    public void addFragmentToStackWithAnimation(Fragment fragment,
+    public void addFragmentToStackWithAnimation(Fragment fragment, boolean addToBackStack,
                                                 @android.support.annotation.AnimRes int enter,
                                                 @android.support.annotation.AnimRes int exit,
                                                 @android.support.annotation.AnimRes int popEnter,
@@ -86,16 +90,19 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
         ft.setCustomAnimations(enter, exit, popEnter, popExit);
         final String tag = fragment.getClass().getName() + "@" + fragment.hashCode();
         ft.replace(mContainerId, fragment, tag);
-        ft.addToBackStack(tag); // 将name设置成和tag一样，那样就可以在BackStack中通过entryName（tag）来找到Fragment
+        if(addToBackStack) {
+            ft.addToBackStack(tag); // 将name设置成和tag一样，那样就可以在BackStack中通过entryName（tag）来找到Fragment
+        }
         ft.commit();
     }
 
     /**
      * 入栈（无动画）
      * @param fragment Fragment对象
+     * @param addToBackStack 是否加入到回退栈中
      */
-    public void addFragmentToStackWithoutAnimation(Fragment fragment) {
-        addFragmentToStackWithAnimation(fragment, 0, 0, 0, 0);
+    public void addFragmentToStackWithoutAnimation(Fragment fragment, boolean addToBackStack) {
+        addFragmentToStackWithAnimation(fragment, addToBackStack, 0, 0, 0, 0);
     }
 
     /**

@@ -119,41 +119,44 @@ public class BaseFragment extends Fragment implements View.OnClickListener {
     /**
      * 打开新的Fragment（系统默认动画）
      * @param fragment Fragment对象
+     * @param addToBackStack 是否加入到回退栈中
      */
-    protected void openNewFragment(Fragment fragment) {
+    protected void openNewFragment(Fragment fragment, boolean addToBackStack) {
         Activity activity = getActivity();
         if(activity instanceof BaseActivity) {
-            ((BaseActivity) activity).addFragmentToStack(fragment);
+            ((BaseActivity) activity).addFragmentToStack(fragment, addToBackStack);
         }
     }
 
     /**
      * 打开新的Fragment(带动画)
      * @param fragment Fragment对象
+     * @param addToBackStack 是否加入到回退栈中
      * @param enter 新的Fragment出现动画
      * @param exit 旧的Fragment消失动画
      * @param popEnter 新的Fragment消失动画
      * @param popExit 旧的Fragment出现动画
      */
-    protected void openNewFragmentWithAnimation(Fragment fragment,
+    protected void openNewFragmentWithAnimation(Fragment fragment, boolean addToBackStack,
                                                                @android.support.annotation.AnimRes int enter,
                                                                @android.support.annotation.AnimRes int exit,
                                                                @android.support.annotation.AnimRes int popEnter,
                                                                @android.support.annotation.AnimRes int popExit) {
         Activity activity = getActivity();
         if(activity instanceof BaseActivity) {
-            ((BaseActivity) activity).addFragmentToStackWithAnimation(fragment, enter, exit, popEnter, popExit);
+            ((BaseActivity) activity).addFragmentToStackWithAnimation(fragment, addToBackStack, enter, exit, popEnter, popExit);
         }
     }
 
     /**
      * 打开新的Fragment(无动画)
      * @param fragment Fragment对象
+     * @param addToBackStack 是否加入到回退栈中
      */
-    protected void openNewFragmentWithoutAnimation(Fragment fragment) {
+    protected void openNewFragmentWithoutAnimation(Fragment fragment, boolean addToBackStack) {
         Activity activity = getActivity();
         if(activity instanceof BaseActivity) {
-            ((BaseActivity) activity).addFragmentToStackWithAnimation(fragment, 0, 0, 0, 0);
+            ((BaseActivity) activity).addFragmentToStackWithAnimation(fragment, addToBackStack, 0, 0, 0, 0);
         }
     }
 

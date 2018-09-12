@@ -105,8 +105,8 @@ public class SlidingWindowActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-//        popBack();
-        finish();
+        popBack();
+//        finish();
 
     }
 
@@ -126,6 +126,6 @@ public class SlidingWindowActivity extends BaseActivity {
     }
 
     private void addFragment(Fragment fragment) {
-        addFragmentToStackWithoutAnimation(fragment);
+        addFragmentToStackWithoutAnimation(fragment, false);
     }
 }
