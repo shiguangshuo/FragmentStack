@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         // 设置容器id
-        mContainerId = R.id.fl_container;
+        setContainerId(R.id.fl_container);
     }
 ```
 

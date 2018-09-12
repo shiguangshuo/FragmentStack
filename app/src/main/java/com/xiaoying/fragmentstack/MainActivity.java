@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.xiaoying.fragmentstack.library.BaseActivity;
+
 public class MainActivity extends BaseActivity {
 
     private TextView mTvTitle;
@@ -15,7 +17,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         // 设置容器id
-        mContainerId = R.id.fl_container;
+        setContainerId(R.id.fl_container);
 
         mTvTitle = findViewById(R.id.tv_title);
 

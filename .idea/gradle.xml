@@ -9,6 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/fragment_stack_library" />
+            <option value="$PROJECT_DIR$/sliding_window_demo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+    <FrameLayout
+        android:id="@+id/fl_sliding_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ll_sliding_menu_container">
+
+    </FrameLayout>
+    <ScrollView
+        android:id="@+id/ll_sliding_menu_container"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/colorPrimary">
+        <RadioGroup
+            android:id="@+id/rg_sliding_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/rbtn_tab1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:background="@drawable/tab_bg_selector"
+                android:text="Tab 1"/>
+            <RadioButton
+                android:id="@+id/rbtn_tab2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:background="@drawable/tab_bg_selector"
+                android:text="Tab 2"/>
+            <RadioButton
+                android:id="@+id/rbtn_tab3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:background="@drawable/tab_bg_selector"
+                android:text="Tab 3"/>
+            <RadioButton
+                android:id="@+id/rbtn_tab4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:background="@drawable/tab_bg_selector"
+                android:text="Tab 4"/>
+        </RadioGroup>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.xiaoying.fragmentstack;
+package com.xiaoying.fragmentstack.library;
 
 import android.app.Activity;
 import android.content.Intent;

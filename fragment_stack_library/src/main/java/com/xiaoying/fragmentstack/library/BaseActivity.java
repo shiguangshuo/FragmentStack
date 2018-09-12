@@ -1,4 +1,4 @@
-package com.xiaoying.fragmentstack;
+package com.xiaoying.fragmentstack.library;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,6 +30,17 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
 
+    }
+
+    /**
+     * 设置容器id
+     * @param containerId
+     */
+    public void setContainerId(int containerId) {
+        if(0 == containerId) {
+            throw new IllegalArgumentException("Container id must be valid");
+        }
+        mContainerId = containerId;
     }
 
     /**

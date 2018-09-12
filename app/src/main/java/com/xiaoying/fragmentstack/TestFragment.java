@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.xiaoying.fragmentstack.library.BaseFragment;
+
 import java.util.Locale;
 
 /**
