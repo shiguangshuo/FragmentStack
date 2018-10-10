@@ -84,7 +84,7 @@ public class TestFragment extends BaseFragment {
             case R.id.btn_next:
                 Bundle args = new Bundle();
                 args.putInt("extra_page", mPageNum + 1);
-                openNewFragmentWithoutAnimation(TestFragment.newInstance(args));
+                openNewFragmentWithoutAnimation(TestFragment.newInstance(args), true);
                 break;
             default:
                 break;
